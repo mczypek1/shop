@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 30 Mar 2019, 11:52
+-- Czas generowania: 30 Mar 2019, 13:31
 -- Wersja serwera: 10.1.34-MariaDB
 -- Wersja PHP: 7.2.8
 
@@ -48,8 +48,20 @@ CREATE TABLE `products` (
   `price` decimal(10,0) NOT NULL,
   `category` char(1) COLLATE utf8_polish_ci NOT NULL,
   `brand` varchar(255) COLLATE utf8_polish_ci NOT NULL,
-  `size` int(11) NOT NULL
+  `size` int(11) NOT NULL,
+  `image` varchar(255) COLLATE utf8_polish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+
+--
+-- Zrzut danych tabeli `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `price`, `category`, `brand`, `size`, `image`) VALUES
+(1, 'Nike Internationalist\r\n', '379', 'M', 'Nike', 42, 'internationalist.png'),
+(2, 'Nike Air Force 1 Sage Low', '469', 'D', 'Nike', 39, 'sage.webp'),
+(3, 'Nike Air Max 97 RF', '799', 'M', 'Nike', 41, 'rf.webp'),
+(4, 'Nike Blazer Mid Rebel', '469', 'D', 'Nike', 38, 'blazer.webp'),
+(5, 'Nike Phantom Vision Academy', '469', 'U', 'Nike', 40, 'phantom.webp');
 
 -- --------------------------------------------------------
 
@@ -111,7 +123,7 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT dla tabeli `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT dla tabeli `users`
