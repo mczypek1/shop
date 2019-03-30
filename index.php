@@ -39,21 +39,24 @@ foreach($dbh->query('SELECT * from products') as $row) {
               </form>
           </div>
 
-          <ul class="list-group">
-              <?php
-              foreach ($products as $product) {
-                  echo '<div class="card mb-3">';
-                  echo '<img class="card-img-top" data-src="' . 'C:/xampp/htdocs/shop/assets/images/' . $product["image"] . '" alt="100%x180" src="' . 'C:/xampp/htdocs/shop/assets/images/' . $product["image"] . '" data-holder-rendered="true" style="height: 180px; width: 100%; display: block;">';
+          <div class="col-7 text-center" style="margin-right: auto; margin-left: auto;">
+              <ul class="list-group">
+                  <?php
+                  foreach ($products as $product) {
+                      echo '<div class="card mb-3">';
+                      echo '<img style="height: 400px;" class="card-img-top" data-src="' . 'assets/images/' . $product["image"] . '" alt="100%x180" src="' . 'assets/images/' . $product["image"] . '" data-holder-rendered="true" style="height: 180px; width: 100%; display: block;">';
                       echo '<div class="card-body">';
-                          echo '<h5 class="card-title">' . $product["name"] .'</h5>';
-                          echo '<p class="card-text">Producent: ' . $product["brand"] . '</p>';
-                          echo '<span class="card-text">Kategoria: ' . $product["category"] . '</span>';
-                          echo '<p class="card-text"><small class="text-muted">' . $product["price"] . ' PLN' . '</small></p>';
+                      echo '<h5 class="card-title">' . $product["name"] .'</h5>';
+                      echo '<p class="card-text">Producent: ' . $product["brand"] . '</p>';
+                      echo '<span class="card-text">Kategoria: ' . $product["category"] . '</span>';
+                      echo '<p class="card-text"><small class="text-muted">' . $product["price"] . ' PLN' . '</small></p>';
                       echo '</div>';
-                  echo '</div>';
-              }
-              ?>
-          </ul>
+                      echo '</div>';
+                  }
+                  ?>
+              </ul>
+          </div>
+
       </div>
 
     </div><!-- /.container -->
